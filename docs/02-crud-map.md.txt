@@ -1,0 +1,57 @@
+# CRUD Map: Stray Alert MVP
+
+## Table CRUD Operations
+
+| Table | C | R | U | D | Pages | Who |
+|-------|---|---|---|---|-------|-----|
+| owners | ✓ | ✓ | ✓ | – | register.html, dashboard.html, admin/users.html | Self: C, U · Admin: R, U, D (deactivate) |
+| pets | ✓ | ✓ | ✓ | ✓ | pets/form.html, pets/detail.html, pets/feed.html, admin/pets.html | Owner: C, R, U own · Admin: all |
+| qr_tags | ✓ | ✓ | – | – | pets/tag.html, pets/scan.html | Owner: R · Admin: all (auto-generated on pet create) |
+| reports | ✓ | ✓ | ✓ | – | lostfound/form.html, lostfound/index.html, lostfound/detail.html, admin/reports.html | Public: C (found) · Owner: C (lost) · Admin: R, U (resolve) |
+
+**Notes:**
+- owners: No delete - accounts are deactivated instead (is_admin or status field)
+- qr_tags: Auto-generated when pet is created, no manual delete (cascade delete with pet)
+- reports: Kept as history, never deleted - status changes from Open to Resolved
+
+---
+
+## Form Field Lists
+
+### owners table
+
+| Column name | Form control | Required? |
+|-------------|--------------|----------|
+| owner_id | none (auto-generated) | – |
+| full_name | <input type="text" maxlength="30"> | Yes |
+| email | <input type="email" maxlength="30"> | Yes |
+| contact_number | <input type="tel" maxlength="15"> | Yes |
+| address | <input type="text" maxlength="30"> | Yes |
+| password_hash | <input type="password"> | Yes |
+| is_admin | <input type="checkbox"> | No (admin sets this) |
+| registered_date | none (DEFAULT CURRENT_DATE) | – |
+
+### pets table
+
+| Column name | Form control | Required? |
+|-------------|--------------|----------|
+| pet_id | none (auto-generated) | – |
+| owner_id | <select> (owner names) | Yes (filled from logged-in user) |
+| pet_name | <input type="text" maxlength="10"> | Yes |
+| species | <select> (Dog, Cat) | Yes |
+| sex | <select> (Male, Female) | No |
+| breed | <input type="text" maxlength="10"> | No |
+| color_markings | <input type="text" maxlength="10"> | No |
+| age_years | <input type="number" min="0"> | No |
+| description | <textarea> | No |
+| photo | <input type="file" accept="image/*"> | No |
+| is_vaccinated | <input type="checkbox"> | No |
+| vaccine_name | <input type="text" maxlength="20"> | Conditional (if vaccinated) |
+| last_vaccination_date | <input type="date"> | Conditional (if vaccinated) |
+| registered_date | none (DEFAULT CURRENT_DATE) | – |
+
+---
+
+## Schema Changes
+
+None. (Walang binago sa schema habang nagpaplano.)

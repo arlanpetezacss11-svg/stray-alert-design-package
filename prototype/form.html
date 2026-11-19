@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Pet - Stray Alert MVP</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Stray Alert MVP</h1>
+    <nav>
+      <a href="list.html">My Pets</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Add Pet</h2>
+    
+    <form action="#" method="post" class="form">
+      <!-- pet_name -->
+      <label for="pet_name">Pet Name *</label>
+      <input id="pet_name" name="pet_name" type="text" maxlength="10" required>
+      
+      <!-- species -->
+      <label for="species">Species *</label>
+      <select id="species" name="species" required>
+        <option value="">Choose one</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+      </select>
+      
+      <!-- sex -->
+      <label for="sex">Sex</label>
+      <select id="sex" name="sex">
+        <option value="">Choose one</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      
+      <!-- breed -->
+      <label for="breed">Breed</label>
+      <input id="breed" name="breed" type="text" maxlength="10">
+      
+      <!-- color_markings -->
+      <label for="color_markings">Color/Markings</label>
+      <input id="color_markings" name="color_markings" type="text" maxlength="10">
+      
+      <!-- age_years -->
+      <label for="age_years">Age (years)</label>
+      <input id="age_years" name="age_years" type="number" min="0">
+      
+      <!-- description -->
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="3"></textarea>
+      
+      <!-- photo -->
+      <label for="photo">Photo</label>
+      <input id="photo" name="photo" type="file" accept="image/*">
+      
+      <!-- is_vaccinated -->
+      <label>
+        <input type="checkbox" name="is_vaccinated" value="1"> Vaccinated
+      </label>
+      
+      <!-- vaccine_name -->
+      <label for="vaccine_name">Vaccine Name</label>
+      <input id="vaccine_name" name="vaccine_name" type="text" maxlength="20">
+      
+      <!-- last_vaccination_date -->
+      <label for="last_vaccination_date">Last Vaccination Date</label>
+      <input id="last_vaccination_date" name="last_vaccination_date" type="date">
+      
+      <!-- sample error message -->
+      <p class="error">Please enter pet name.</p>
+      
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="list.html" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</body>
+</html>

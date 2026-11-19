@@ -1,0 +1,35 @@
+# Project Brief: Stray Alert MVP
+
+## 1. The problem
+Pet owners struggle to quickly find lost pets, and veterinary clinics lack a centralized system to track registered pets and manage lost/found reports. Manual record-keeping makes it hard to reunite pets with their owners efficiently.
+
+## 2. Users and what they need to do
+| User role | What they need to do in the app |
+|-----------|---------------------------------|
+| Pet Owner | Register pets, generate QR tags, report lost pets, view pet profiles |
+| Admin (Veterinary Clinic Staff) | Manage users, view all pets, resolve lost/found reports, manage system |
+| Public | Report found pets, scan QR codes to identify pets, view lost/found feed |
+
+## 3. The database behind it
+Database: stray_alert (SQLite)
+- **owners** - Stores pet owner information including admin role
+- **pets** - Stores pet details, photos, and vaccination records
+- **qr_tags** - Links pets to unique QR codes for identification
+- **reports** - Stores lost and found pet reports with status tracking
+
+## 4. Must-have features (for the final project)
+- Register and manage pet profiles with photos
+- Generate and print QR tags for pets
+- Report lost or found pets with location and photos
+- Scan QR codes to view pet information
+- Admin dashboard to manage users, pets, and reports
+- View lost/fold feed with search and filter
+
+## 5. Nice-to-have features (only if there's time)
+- Email notifications when a pet is reported found
+- Map view of lost/found locations
+- Statistics dashboard for clinic analytics
+
+## 6. Similar apps I looked at
+- **PawBoost** - Uses community network to find lost pets; I'll borrow their social sharing feature
+- **Petfinder** - Clean pet profile layout with clear status badges; I'll borrow their card-based design

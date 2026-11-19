@@ -1,0 +1,38 @@
+# Style Guide: Stray Alert MVP
+
+## Colors
+
+| Color Name | Hex Code | Usage |
+|------------|----------|-------|
+| Primary | #0b3d5c | Buttons, links, headings |
+| Background | #f5f7fa | Page background |
+| Text | #12263a | Body text |
+| Success | #23683f | Success messages, resolved status |
+| Error | #a8352a | Error messages, alerts |
+
+**Contrast Check:**
+- Text (#12263a) on Background (#f5f7fa): Ratio 14.1:1 ✓ (Passes WCAG AA)
+
+---
+
+## Fonts
+
+- **Heading Font**: Poppins, Arial, sans-serif
+- **Body Font**: Inter, Arial, sans-serif
+- **Base Font Size**: 16px
+
+---
+
+## CSS Custom Properties
+
+```css
+:root {
+  --color-primary: #0b3d5c;
+  --color-bg: #f5f7fa;
+  --color-text: #12263a;
+  --color-success: #23683f;
+  --color-error: #a8352a;
+  --font-heading: "Poppins", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+  --radius: 8px;
+}
